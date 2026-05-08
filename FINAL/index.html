@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Limo Driver Applicants</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Limo Driver Applicant Dashboard</h1>
+      <p>Review applicant profiles, experience, license details, and current status.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by name, city, or license..."
+        />
+      </div>
+
+      <div class="filter-box">
+        <select id="statusFilter">
+          <option value="all">All Statuses</option>
+          <option value="Pending Review">Pending Review</option>
+          <option value="Interview Scheduled">Interview Scheduled</option>
+          <option value="Approved">Approved</option>
+          <option value="Declined">Declined</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <h3 id="totalApplicants">0</h3>
+        <p>Total Applicants</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="pendingApplicants">0</h3>
+        <p>Pending Review</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="interviewApplicants">0</h3>
+        <p>Interview Scheduled</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="approvedApplicants">0</h3>
+        <p>Approved</p>
+      </div>
+    </section>
+
+    <section id="applicantGrid" class="applicant-grid"></section>
+  </main>
+
+  <div id="applicantModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
