@@ -10,7 +10,7 @@ const applicants = [
     phone: "(555) 201-4401",
     email: "Tiger@Hotmail.com",
     notes: "Only 2 DUIs in the past 10 years. Known to do drugs.",
-    image: "IMAGE/TigerWoods26.WEBP"
+    image: "IMAGE/TigerWoods26.png"
   },
   {
     id: 2,
