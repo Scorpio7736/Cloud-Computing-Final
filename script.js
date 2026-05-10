@@ -1,5 +1,18 @@
 const applicants = [
   {
+    id: 0,
+    name: "Cole Von Cole",
+    city: "Mother Russia",
+    experience: "7 years",
+    license: "Class F",
+    availability: "You Wish",
+    status: "Pending Review",
+    phone: "(347) 695-0241",
+    email: "cole@von.cole",
+    notes: "Atrocious! I was promised a meal!!!!",
+    image: "IMAGE/ColeVonCole.png"
+  },
+  {
     id: 1,
     name: "Tiger Woods",
     city: "Cypress, CA",
