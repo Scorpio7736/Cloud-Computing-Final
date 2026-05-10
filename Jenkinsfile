@@ -4,7 +4,6 @@ pipeline {
     environment {
         AWS_REGION = 'us-east-2'
         S3_BUCKET = 'jack-cloud-final-project-site-336449586341-us-east-2-an'
-        SITE_FOLDER = 'FINAL'
     }
 
     stages {
@@ -15,19 +14,22 @@ pipeline {
             }
         }
 
-        stage('List Project Files') {
+        stage('List Website Files') {
             steps {
-                echo 'Listing files in the website folder...'
-                sh 'ls -la $SITE_FOLDER'
+                echo 'Listing website files...'
+                sh 'ls -la'
             }
         }
 
         stage('Validate Static Website') {
             steps {
-                echo 'Checking for at least one HTML file...'
+                echo 'Validating static website files...'
                 sh '''
-                    if ! ls $SITE_FOLDER/*.html >/dev/null 2>&1; then
-                        echo "ERROR: No HTML file found in $SITE_FOLDER"
+                    test -f index.html
+                    test -f script.js
+
+                    if ! find . -maxdepth 1 -type f -name "*.css" | grep -q .; then
+                        echo "ERROR: No CSS file found"
                         exit 1
                     fi
                 '''
@@ -36,9 +38,12 @@ pipeline {
 
         stage('Deploy to S3') {
             steps {
-                echo 'Deploying website files to Amazon S3...'
+                echo 'Deploying website to Amazon S3...'
                 sh '''
-                    aws s3 sync $SITE_FOLDER/ s3://$S3_BUCKET --delete
+                    aws s3 sync . s3://$S3_BUCKET --delete \
+                    --exclude ".git/*" \
+                    --exclude "Jenkinsfile" \
+                    --exclude "README.md"
                 '''
             }
         }
