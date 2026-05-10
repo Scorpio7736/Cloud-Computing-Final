@@ -6,7 +6,7 @@ const applicants = [
     experience: "7 years",
     license: "Class F",
     availability: "You Wish",
-    status: "Pending Review",
+    status: "Approved",
     phone: "(347) 695-0241",
     email: "cole@von.cole",
     notes: "Atrocious! I was promised a meal!!!!",
