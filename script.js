@@ -19,7 +19,7 @@ const applicants = [
     experience: "10 years",
     license: "Class D",
     availability: "Weekdays and weekends",
-    status: "Pending Review",
+    status: "Declined",
     phone: "(555) 201-4401",
     email: "Tiger@Hotmail.com",
     notes: "Only 2 DUIs in the past 10 years. Known to do drugs.",
