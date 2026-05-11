@@ -3,7 +3,7 @@ const applicants = [
     id: 0,
     name: "Cole Von Cole",
     city: "Mother Russia",
-    experience: "10 years",
+    experience: "11 years",
     license: "Class F",
     availability: "You Wish",
     status: "Approved",
