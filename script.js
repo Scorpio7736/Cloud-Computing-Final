@@ -58,7 +58,7 @@ const applicants = [
     experience: "Mobile Expert at T-Mobile",
     license: "Standard US Drivers License",
     availability: "24/7",
-    status: "Pending Review",
+    status: "Accepted",
     phone: "(555) 104 - 2072",
     email: "billyescamilla@outlook.com",
     notes: "Drives a little fast but has super cool cars!",
